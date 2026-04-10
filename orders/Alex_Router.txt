@@ -1,0 +1,28 @@
+hostname Alex
+interface GigabitEthernet0/0
+ ip add 172.0.0.1 255.255.255.0
+ no shutdown
+
+interface GigabitEthernet0/1
+ ip add 162.0.0.2 255.255.255.0
+ no shutdown
+
+# DHCP Configuration
+ip dhcp pool Alex
+ network 172.0.0.0 255.255.255.0
+ default-router 172.0.0.1
+ dns-server 2.2.2.2
+ exit
+
+# Tunnel Configuration
+interface tunnel 1
+ ip add 100.0.0.2 255.255.255.0
+ tunnel source g0/1
+ tunnel destination 182.0.0.2
+
+# Routing
+ip route 0.0.0.0 0.0.0.0 162.0.0.1
+router ospf 1
+ network 100.0.0.0 0.0.0.255 area 0
+ network 172.0.0.0 0.0.0.255 area 0
+do wr
