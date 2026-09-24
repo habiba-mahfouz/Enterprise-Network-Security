@@ -44,6 +44,10 @@ The lab was built to satisfy the following task sheet:
 7. **Dynamic Routing** — OSPF area 0 runs over the tunnel and both LANs so each branch learns the other's routes automatically.
 8. **Connectivity Validation** — the IT Manager's laptop (192.168.1.250) can reach every switch and server on both branches.
 
+## 🖼️ Full Topology Screenshots
+
+Individual close-up screenshots of each part of the network (switches, ISP router, IT Manager, and the attacker zone) are available in the [`topology images/`](topology%20images) folder for a closer look at each segment.
+
 ## 🚀 Getting Started
 
 1. Install **Cisco Packet Tracer** (v8.0+ recommended).
